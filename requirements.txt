@@ -24,7 +24,7 @@ diffenator3==1.1.4
 ffmpeg-python==0.2.0
 filelock==3.29.0
 fontFeatures==1.9.0
-fontgarden-tools @ git+https://github.com/fontgarden/fontgarden-tools@2d74e88f226e2fe6e1d97729cd2209664e13f1ca
+fontgarden-tools @ git+https://github.com/fontgarden/fontgarden-tools@3b48c7673be0565fa95f8880faadc9aa8f54af0b
 fontmake==3.12.2
 fontMath==0.10.0
 fontspectorapi==1.7.0
