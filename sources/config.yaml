@@ -1,0 +1,10 @@
+sources:
+  - FontGardenTemplate-Regular.ufo
+familyName: "Font Garden Template"
+outputDir: ../fonts
+buildVariable: false
+buildOTF: false
+buildWebfont: false
+autohintTTF: false
+flattenComponents: false
+decomposeTransformedComponents: false

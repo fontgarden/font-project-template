@@ -1,0 +1,62 @@
+# Font Garden Template design specification.
+#
+# Read by the fgtools command of fontgarden-tools
+# (https://github.com/fontgarden/fontgarden-tools).
+# Font metrics are in the UFO fontinfo.plist files. They are not repeated here.
+
+# The em is 1024 units. Every point is on the 2-unit grid. Structural points
+# are on the 8-unit grid; a point on the 2-unit grid but off the 8-unit grid
+# is an optical correction.
+[grid]
+source = 2         # every point is on the 2-unit grid
+machine_draft = 8  # new drafts use the 8-unit grid
+
+# Stroke thickness ranges, in font units, for each master and script. Set them
+# from the green glyphs with `fgtools check-design --observe` when the first
+# glyphs are green. A measured span longer than stroke_limit is not a stroke.
+[targets]
+
+# Mark colors.
+#
+# rgba lists every value that the sources use for the color. The policy is
+# what an agent can do with a glyph that has the color.
+
+[colors.green]
+rgba = [[0, 1, 0, 1], [0.09, 0.72, 0.44, 1]]
+policy = """Locked in as close to final. Eli approves contour glyphs. A composite is green when its \
+parts are green and `fgtools check-design --ready` lists it."""
+
+[colors.yellow]
+rgba = [[1, 1, 0, 1], [1, 0.86, 0.2, 1], [0.91, 0.79, 0.27, 1]]
+policy = "Close. Edit without replacing the drawing. Not a reference."
+
+[colors.orange]
+rgba = [[1, 0.5, 0, 1], [1, 0.6, 0.06, 1], [0.97, 0.58, 0, 1]]
+policy = "Better, not good enough. Edit and keep useful construction. Replace only when Eli says so."
+
+[colors.red]
+rgba = [[1, 0, 0, 1], [1, 0.29, 0.24, 1], [1, 0.3, 0.3, 1]]
+policy = "Broken. Can be replaced when Eli names the glyph. Not a reference."
+
+[colors.purple]
+rgba = [[0.54, 0.44, 0.88, 1], [0.5, 0, 1, 1]]
+policy = "AI drawing that Eli has not reviewed. Not a reference."
+
+[colors.blue]
+rgba = [[0.27, 0.44, 1, 1]]
+policy = "Composite that needs diagnosis. Not a reference."
+
+[colors.pink]
+rgba = []  # no glyph uses pink now
+policy = "Composite that needs small edits. Not a reference."
+
+# Known development debt, not release exceptions. `fgtools qa` leaves these
+# checks out; `fgtools qa --full` runs them. Remove a check when the font
+# passes it. Do not add a check to hide a new failure.
+[qa.exclude]
+"googlefonts/glyph_coverage" = "The glyph set is not complete."
+"googlefonts/glyphsets/shape_languages" = "The glyph set is not complete."
+"googlefonts/render_own_name" = "The glyph set is not complete."
+"opentype/monospace" = "The starter font has only spaces, so every advance is the same."
+"family/win_ascent_and_descent" = "The starter font has no glyph below the baseline."
+"googlefonts/repo/dirname_matches_nameid_1" = "Needs the google/fonts package directory."
