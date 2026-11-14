@@ -28,7 +28,7 @@ designer to grade.
 ## Method
 
 The tools are `img2glyph`, `img2bez` and `img2ufo`
-(https://github.com/eliheuer/img2ufo). Read the agent guide of img2ufo first;
+(https://github.com/fontgarden/img2ufo). Read the agent guide of img2ufo first;
 it lists the known faults and their causes.
 
 1. Copy the image to `sources/specimen/` with a plain file name. Check its
@@ -43,10 +43,12 @@ it lists the known faults and their causes.
 4. Measure the cap height, x-height, ascender and descender in pixels from
    the manifest. Keep the proportions of the specimen and snap the targets to
    multiples of 8.
-5. Run `img2ufo` with the labels and the metrics, into the UFO in `sources/`.
-6. Mark every traced glyph purple, the mark of a draft that the designer has
-   not reviewed (`sources/design.toml`).
-7. Render the font in a line of text and compare it with the specimen. Find
+5. Run `img2ufo` with the labels and the metrics, with `--output` on the UFO
+   in `sources/`, `--worklist out/specimen/completion.json` and `--no-qa`.
+   It marks each trace purple, the mark of a draft that the designer has not
+   reviewed (`sources/design.toml`). A later run replaces only purple and
+   red glyphs.
+6. Render the font in a line of text and compare it with the specimen. Find
    the glyphs that sit too high or too low, and the contours from dust.
    Correct the placement faults; report the faults of shape.
 
