@@ -4,6 +4,8 @@ Font Garden Template is the starting point of a Font.Garden font project: a
 font source repository in the Google Fonts layout, with the Font.Garden tools,
 QA and agent instructions. It holds a starter font with two glyphs.
 
+The guide of the system is at https://font.garden/docs.
+
 ## Start a font
 
 1. Create a repository from this template ("Use this template" on GitHub).
