@@ -15,4 +15,4 @@ GitPython
 glyphsets
 PyYAML
 uharfbuzz
-fontgarden-tools @ git+https://github.com/fontgarden/fontgarden-tools@3b48c7673be0565fa95f8880faadc9aa8f54af0b
+fontgarden-tools @ git+https://github.com/fontgarden/fontgarden-tools@9c1bb9b9ddf380f6484c510108f6043773f93f00

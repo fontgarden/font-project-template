@@ -34,6 +34,7 @@ as the Google Fonts packager runs it, builds the same fonts with fontmake.
 | `make test` | Repository layout and documentation reference tests. |
 | `make status` | Rewrite `STATUS.md` from the mark colors. |
 | `make check-design GLYPHS="..."` | Compare glyphs with the targets in `sources/design.toml`. |
+| `make check-accents` | List the accented letters whose mark is not where the other accented letters predict, or not where the anchors of its parts are. |
 | `make check-changes` | Check source changes since `main`: green glyphs unchanged, drafts purple. |
 | `make lint` | Structural and curve checks of the sources. |
 | `make proof-web` | Compare the current build with `reference-fonts/` in a browser. |
