@@ -20,7 +20,7 @@ GLIF XML.
 | --- | --- |
 | `make proof-web` | Serves the current build beside the fonts in `reference-fonts/` at one em size and weight (`fgtools proof-web`). |
 | `make diff` | diffenator3 comparison of main and the working tree in `out/diff/`. Run it after every source edit. |
-| `make check-changes GLYPHS="..."` with `--proof <dir>` | Runebender proof sheets of changed glyphs, before and after. |
+| `.venv/bin/fgtools check-changes --glyphs "..." --proof <dir>` | Runebender proof sheets of changed glyphs, before and after. |
 
 For a Before and Candidate comparison in the web proof, prepare a snapshot
 from fixed font files with `.venv/bin/fgtools proof-web prepare`, then run
