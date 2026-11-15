@@ -51,6 +51,7 @@ a built font and a QA report. The designer then grades the drafts.
 | `make build` | Build the fonts into `fonts/` with fontc. |
 | `make qa` | Check the fonts with the Font.Garden Fontspector profile. |
 | `make diff` | Compare builds of `main` and the working tree with diffenator3. |
+| `make reference-fonts` | Get the reference fonts that `sources/design.toml` lists into `reference-fonts/`, which Git ignores. |
 | `make proof-web` | Build, then compare the font with the fonts in `reference-fonts/` in a browser. |
 | `make status` | Rewrite [STATUS.md](STATUS.md) from the mark colors. |
 | `make test` | Check the repository layout and the document references. |

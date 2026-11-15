@@ -50,6 +50,19 @@ policy = "Composite that needs diagnosis. Not a reference."
 rgba = []  # no glyph uses pink now
 policy = "Composite that needs small edits. Not a reference."
 
+
+# Reference fonts.
+#
+# The fonts that the proofs and Runebender show beside this font. They are
+# for comparison of weight, spacing and structure. They are not a source of
+# outlines. Each key is a directory name of https://github.com/google/fonts
+# under ofl/, and each value is the reason that the family is a reference.
+# `make reference-fonts` copies the families into reference-fonts/, which Git
+# ignores.
+[reference_fonts.families]
+inter = "A neutral sans for text and interfaces, with wide language coverage."
+sourcesans3 = "A sans for text from a professional foundry, with even spacing."
+
 # Known development debt, not release exceptions. `fgtools qa` leaves these
 # checks out; `fgtools qa --full` runs them. Remove a check when the font
 # passes it. Do not add a check to hide a new failure.

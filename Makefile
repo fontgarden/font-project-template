@@ -6,7 +6,7 @@ FGTOOLS ?= ./.venv/bin/fgtools
 # The revision that make diff and make check-changes compare with.
 BASE ?= main
 
-.PHONY: help venv setup customize build diff proof-web runebender qa qa-full qa-package test status queue check-design check-accents accent-proofs check-changes corrections lint clean
+.PHONY: help venv setup customize build diff proof-web reference-fonts runebender qa qa-full qa-package test status queue check-design check-accents accent-proofs check-changes corrections lint clean
 
 help:
 	@printf '%s\n' \
@@ -29,6 +29,7 @@ help:
 		'  make build          Build the fonts into fonts/ with fontc' \
 		'  make diff           Compare builds of main and the working tree (diffenator3)' \
 		'  make proof-web      Build, then compare with reference-fonts/ in a browser' \
+		'  make reference-fonts  Get the reference fonts that sources/design.toml lists' \
 		'  make runebender     Open the sources in the Runebender web editor' \
 		'' \
 		'QA:' \
@@ -57,6 +58,11 @@ diff:
 
 proof-web: build
 	$(FGTOOLS) proof-web --current
+
+# Copies the families of [reference_fonts.families] in sources/design.toml into
+# reference-fonts/, which Git ignores. See `fgtools fetch-reference-fonts --help`.
+reference-fonts:
+	$(FGTOOLS) fetch-reference-fonts --project
 
 # Edits to the sources reload in the browser, and Cmd+S saves back to disk.
 runebender:
