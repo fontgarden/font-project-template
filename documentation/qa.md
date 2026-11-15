@@ -39,6 +39,7 @@ as the Google Fonts packager runs it, builds the same fonts with fontmake.
 | `make check-changes` | Check source changes since `main`: green glyphs unchanged, drafts purple. |
 | `make lint` | Structural and curve checks of the sources. |
 | `make reference-fonts` | Copy the families of `[reference_fonts.families]` in `sources/design.toml` into `reference-fonts/`. The folder is not in Git. |
+| `make runebender` | Open the sources in Runebender. It needs the `runebender` command: `cargo install --locked --git https://github.com/fontgarden/runebender runebender`. |
 | `make proof-web` | Compare the current build with `reference-fonts/` in a browser. |
 
 The Font.Garden profile includes the Google Fonts profile and adds: a

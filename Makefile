@@ -30,7 +30,7 @@ help:
 		'  make diff           Compare builds of main and the working tree (diffenator3)' \
 		'  make proof-web      Build, then compare with reference-fonts/ in a browser' \
 		'  make reference-fonts  Get the reference fonts that sources/design.toml lists' \
-		'  make runebender     Open the sources in the Runebender web editor' \
+		'  make runebender     Open the sources in Runebender' \
 		'' \
 		'QA:' \
 		'  make qa             Font.Garden Fontspector profile, offline, with the listed exclusions' \
@@ -64,9 +64,11 @@ proof-web: build
 reference-fonts:
 	$(FGTOOLS) fetch-reference-fonts --project
 
-# Edits to the sources reload in the browser, and Cmd+S saves back to disk.
+# Opens the sources in Runebender. Install it with
+# cargo install --locked --git https://github.com/fontgarden/runebender runebender
+RUNEBENDER_SOURCE ?= $(firstword $(wildcard sources/*.designspace) $(wildcard sources/*.ufo))
 runebender:
-	runebender-serve sources --open
+	runebender "$(RUNEBENDER_SOURCE)" &
 
 qa: build
 	$(FGTOOLS) qa
