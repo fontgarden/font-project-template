@@ -107,7 +107,7 @@ check-changes:
 	$(FGTOOLS) check-changes --base "$(BASE)" $(if $(GLYPHS),--glyphs "$(GLYPHS)",)
 
 corrections:
-	$(FGTOOLS) corrections $(if $(ALL),--all,) $(if $(SINCE),--since "$(SINCE)",)
+	$(FGTOOLS) corrections $(if $(ALL),--all,)
 
 lint:
 	$(FGTOOLS) lint-glifs
