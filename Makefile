@@ -6,7 +6,7 @@ FGTOOLS ?= ./.venv/bin/fgtools
 # The revision that make diff and make check-changes compare with.
 BASE ?= main
 
-.PHONY: help venv setup customize build diff proof-web runebender qa qa-full qa-package test status queue check-design check-accents check-changes corrections lint clean
+.PHONY: help venv setup customize build diff proof-web runebender qa qa-full qa-package test status queue check-design check-accents accent-proofs check-changes corrections lint clean
 
 help:
 	@printf '%s\n' \
@@ -20,6 +20,7 @@ help:
 		'  make queue          Rank the glyphs that most composites wait on' \
 		'  make check-design GLYPHS="n a"  Check glyphs against sources/design.toml' \
 		'  make check-accents  List the accented letters whose mark is not where the others predict' \
+		'  make accent-proofs  Draw each accented letter beside the reference fonts, with measurements' \
 		'  make check-changes  Check source changes since main (green unchanged, drafts purple)' \
 		'  make lint           Structural and curve checks of the sources' \
 		'  make corrections    List the corrections of purple drafts that no rule cites' \
@@ -89,6 +90,11 @@ queue:
 # letters predict, or not where the anchors of its parts are.
 check-accents:
 	$(FGTOOLS) check-accents
+
+# Sheets and review.json in out/accent-proofs/. The reference fonts are the
+# shared collection of FONTGARDEN_REFERENCE_FONTS.
+accent-proofs:
+	$(FGTOOLS) render-accent-proofs
 
 # Usage: make check-changes BASE=main GLYPHS="a e"
 check-changes:

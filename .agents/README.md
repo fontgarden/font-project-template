@@ -5,7 +5,7 @@ Code and OMP read it.
 
 | Directory | Content |
 | --- | --- |
-| `skills/` | Procedures that an agent loads by name: `build-and-proof`, `font-qa` and `google-fonts-release`. |
+| `skills/` | Procedures that an agent loads by name: `build-and-proof`, `font-qa`, `accent-review` and `google-fonts-release`. |
 | `tasks/` | Task contracts for long or unattended runs: goal, acceptance, constraints, and the report to give at the end. |
 
 `.omp/RULES.md` is a link to `AGENTS.md`. OMP gives rules to its subagents,
@@ -17,6 +17,7 @@ but not `AGENTS.md`, so the link gives subagents the same rules.
 | --- | --- |
 | `tasks/specimen-intake.md` | Turn a specimen image into purple drafts in the UFO. |
 | `tasks/glyph-drafts.md` | Draft named glyphs from the green glyphs. |
+| `tasks/accented-letters.md` | Build the accented letters as purple composites and review each one on the proof sheets. |
 | `tasks/google-fonts-release.md` | Prepare the release checks and the package. |
 
 ## Run a task without a person
