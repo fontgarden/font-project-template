@@ -15,7 +15,7 @@ proof, measure and report.
 | `Makefile` | The daily commands. `make help` lists them. |
 | `sources/` | One UFO for each master, a designspace when there is more than one master, `sources/config.yaml` (the gftools builder recipe) and `sources/held-out-glyphs.toml` (cases of the drafting evaluation). A traced font has its specimen image in a `specimen` folder here. |
 | [documentation/google-fonts.md](documentation/google-fonts.md) | The release: facts, QA, package and the Add Font issue. |
-| `.agents/` | `tasks/` holds contracts for unattended runs: specimen intake, glyph drafts and accented letters. `skills/` holds the accent review. |
+| `.agents/tasks/` | Contracts for unattended runs: specimen intake, glyph drafts and accented letters. |
 
 `CONTEXT.md` is the one design file. Do not state a design value or a design
 rule in another file. Take direction from the designer, not from older reports or
