@@ -54,7 +54,7 @@ RECORD_NAME = re.compile(r'worklog|handoff|report|receipt|\d{4}-\d{2}-\d{2}', re
 GENERATED = {'STATUS.md'}
 
 # Large files make every clone of the history larger, also after they are
-# removed. Rendered output goes to out/. A specimen scan can be larger.
+# removed. Rendered output goes to output/. A specimen scan can be larger.
 MAX_FILE_BYTES = 500_000
 MAX_SPECIMEN_BYTES = 8_000_000
 

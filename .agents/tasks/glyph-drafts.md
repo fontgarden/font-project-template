@@ -12,7 +12,7 @@ of the green glyphs, and is ready for the designer to review.
 ## Acceptance
 
 - Each named glyph is changed in the named masters and marked purple.
-- `.venv/bin/fgtools check-changes --glyphs "<names>" --proof out/review/<branch>`
+- `.venv/bin/fgtools check-changes --glyphs "<names>" --proof output/review/<branch>`
   prints PASS. Its proof sheets exist.
 - For each glyph, the stroke findings of `make check-design GLYPHS="<names>"`
   are corrected, or the report gives the reason the glyph differs.
@@ -42,7 +42,7 @@ of the green glyphs, and is ready for the designer to review.
   merge or tag.
 - Change only the named glyphs. Do not edit scripts, documentation, features,
   kerning or fontinfo.
-- Do not add files to the repository. Write output under `out/`.
+- Do not add files to the repository. Write output under `output/`.
 - Edit GLIF files surgically. Never call whole-UFO `font.save()`.
 
 ## Autonomy

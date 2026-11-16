@@ -46,7 +46,7 @@ and word images.
 
 The profile is the Google Fonts profile plus the Font.Garden requirements: a
 1024-unit em, masters on the 2-unit grid, the vendor ID FTGD and the OFL 1.1.
-The reports are in `out/qa/<mode>/`. Read the JSON report, and count unique
+The reports are in `output/qa/<mode>/`. Read the JSON report, and count unique
 findings, not one finding for each font. A FAIL needs a fix or an exception
 that the designer approves. A WARN needs a decision by the designer. Outline warnings are
 listed for the designer by glyph name and are not corrected. Do not add exclusions,
@@ -58,7 +58,7 @@ in a rendered proof.
 
 ## Package
 
-1. Work in a directory under `out/`. Copy the reviewed TTFs and `OFL.txt`
+1. Work in a directory under `output/`. Copy the reviewed TTFs and `OFL.txt`
    into `ofl/<family>/` and run `gftools add-font` on it.
 2. Copy `documentation/article/ARTICLE.en_us.html` and its image to
    `article/`.

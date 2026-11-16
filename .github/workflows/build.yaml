@@ -31,4 +31,4 @@ jobs:
           name: fonts-and-qa
           path: |
             fonts/
-            out/qa/
+            output/qa/

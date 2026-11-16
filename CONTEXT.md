@@ -45,7 +45,7 @@ stroke.
 R3. `fgtools draft-weights --build` drafts more weights from two masters, when the
 project has a designspace with two masters. `vertical_stem` and
 `horizontal_stroke` give the stroke of H in each master and the target of
-the weight. The drafts go to `out/weights/`. To use it, remove the comment
+the weight. The drafts go to `output/weights/`. To use it, remove the comment
 signs from the table.
 
 ```toml

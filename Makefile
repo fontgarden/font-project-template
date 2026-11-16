@@ -25,7 +25,7 @@ help:
 		'  make proof-web      Build, then compare with reference-fonts/ in a browser' \
 		'  make reference-fonts  Get the reference fonts that CONTEXT.md lists' \
 		'  make runebender     Open the sources in Runebender' \
-		'  make clean          Remove the build output' \
+		'  make clean          Remove fonts/ and output/' \
 		'' \
 		'Every other tool is a command of fgtools: .venv/bin/fgtools --help'
 
@@ -65,7 +65,7 @@ check-design:
 check-changes:
 	$(FGTOOLS) check-changes --base "$(BASE)" $(if $(GLYPHS),--glyphs "$(GLYPHS)",)
 
-# Builds BASE and the working tree with fontc. HTML reports go to out/diff/.
+# Builds BASE and the working tree with fontc. HTML reports go to output/diff/.
 diff:
 	$(FGTOOLS) diff --base "$(BASE)"
 
@@ -81,4 +81,4 @@ runebender:
 	runebender "$(RUNEBENDER_SOURCE)" &
 
 clean:
-	rm -rf build build.ninja .ninja_log fonts out sources/build.ninja sources/.ninja_log sources/instance_ufos
+	rm -rf build build.ninja .ninja_log fonts output sources/build.ninja sources/.ninja_log sources/instance_ufos

@@ -35,7 +35,7 @@ it lists the known faults and their causes.
    resolution: a glyph of about 500 pixels gives a clean trace, and a glyph
    of about 100 pixels gives an uneven one. Report a low resolution; do not
    enlarge the image to hide it.
-2. Segment the image into `out/specimen/glyphs` with `img2glyph process`.
+2. Segment the image into `output/specimen/glyphs` with `img2glyph process`.
    Look at several crops. A hollow crop means that `--block-radius` is
    smaller than the widest stroke.
 3. Label the crops. Write `sources/specimen/labels.json`, one Unicode value
@@ -44,7 +44,7 @@ it lists the known faults and their causes.
    the manifest. Keep the proportions of the specimen and snap the targets to
    multiples of 8.
 5. Run `img2ufo` with the labels and the metrics, with `--output` on the UFO
-   in `sources/`, `--worklist out/specimen/completion.json` and `--no-qa`.
+   in `sources/`, `--worklist output/specimen/completion.json` and `--no-qa`.
    It marks each trace purple, the mark of a draft that the designer has not
    reviewed (`CONTEXT.md`). A later run replaces only purple and
    red glyphs.
