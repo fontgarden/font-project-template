@@ -16,6 +16,17 @@ machine_draft = 8  # new drafts use the 8-unit grid
 # glyphs are green. A measured span longer than stroke_limit is not a stroke.
 [targets]
 
+# Weights that `fgtools draft-weights` drafts from two masters, when the
+# project has a designspace with two masters. vertical_stem and
+# horizontal_stroke give the stroke of H in each master and the target of the
+# weight. The drafts go to out/weights/.
+#
+# [weights.Thin]
+# wght = 100
+# between = ["Regular", "Bold"]
+# vertical_stem = { Regular = 100, Bold = 192, target = 28 }
+# horizontal_stroke = { Regular = 88, Bold = 168, target = 26 }
+
 # Mark colors.
 #
 # rgba lists every value that the sources use for the color. The policy is

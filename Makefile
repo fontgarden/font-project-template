@@ -6,7 +6,7 @@ FGTOOLS ?= ./.venv/bin/fgtools
 # The revision that make diff and make check-changes compare with.
 BASE ?= main
 
-.PHONY: help venv setup customize build diff proof-web reference-fonts runebender qa qa-full qa-package test status queue check-design check-accents accent-proofs check-changes corrections lint clean
+.PHONY: help venv setup customize build diff proof-web reference-fonts runebender qa qa-full qa-package test status queue check-design check-accents accent-proofs check-changes draft-weights corrections lint clean
 
 help:
 	@printf '%s\n' \
@@ -23,6 +23,7 @@ help:
 		'  make accent-proofs  Draw each accented letter beside the reference fonts, with measurements' \
 		'  make check-changes  Check source changes since main (green unchanged, drafts purple)' \
 		'  make lint           Structural and curve checks of the sources' \
+		'  make draft-weights  Draft the masters of more weights from two masters, into out/weights/' \
 		'  make corrections    List the corrections of purple drafts that no rule cites' \
 		'' \
 		'Build and review:' \
@@ -107,6 +108,11 @@ accent-proofs:
 # Usage: make check-changes BASE=main GLYPHS="a e"
 check-changes:
 	$(FGTOOLS) check-changes --base "$(BASE)" $(if $(GLYPHS),--glyphs "$(GLYPHS)",)
+
+# The weights are the [weights.<name>] tables of sources/design.toml. The
+# project needs a designspace with two masters.
+draft-weights:
+	$(FGTOOLS) draft-weights --build
 
 corrections:
 	$(FGTOOLS) corrections $(if $(ALL),--all,)
