@@ -28,9 +28,8 @@ The source tools are in
 package with the command `fgtools`. `make setup` installs it, pinned to a
 commit in `requirements.in` and `requirements.txt`, with the pinned fontc and
 Fontspector binaries. `.venv/bin/fgtools --help` lists every command. Change
-a general tool there, not here. Add a `scripts` folder only for what
-only this font needs: a tool, or its own Fontspector checks in
-`scripts/fontspector_checks.py`, which `make test` runs with the profile. The design checks need the `runebender`
+a general tool there, not here. A font can add its own Fontspector checks in
+`sources/fontspector_checks.py`, which `make test` runs with the profile. The design checks need the `runebender`
 command on `PATH`:
 
 ```sh
