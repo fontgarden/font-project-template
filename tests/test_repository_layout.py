@@ -27,7 +27,7 @@ LAYOUT = [
     # Sources.
     'sources/config.yaml', 'sources/held-out-glyphs.toml', 'CONTEXT.md',
     'sources/*.ufo/**',
-    # Tests of the repository itself. The tools are in fontgarden-tools.
+    # Tests of the repository itself. The tools are in fgtools.
     'tests/test_*.py',
     # Documentation.
     'documentation/*.md',

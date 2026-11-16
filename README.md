@@ -66,7 +66,7 @@ release target is every glyph green.
   corrections, and the rules for work on the sources.
 
 The tools are shared by all Font.Garden fonts and are in
-[fontgarden-tools](https://github.com/fontgarden/fontgarden-tools), with the
+[fgtools](https://github.com/fontgarden/fgtools), with the
 command `fgtools`. AI tools help with code, documentation and draft glyphs.
 The designer draws, reviews and approves the glyphs.
 
