@@ -12,7 +12,7 @@ each event.
    or in the source with a purple mark. The draft is committed before the designer
    edits it.
 3. **Measure.** `make check-design GLYPHS="..."` compares the draft with the
-   targets in [design.toml](../../sources/design.toml). Correct the findings before
+   targets in [context.md](../../context.md). Correct the findings before
    review. A pass is a filter, not approval.
 4. **Review.** The designer compares the glyph with the reference fonts in Runebender
    or `make proof-web`, then grades it. The review commit changes the purple
@@ -45,10 +45,10 @@ the designer's commit message) and proposes one of these changes:
 
 | The correction shows | Change | The citation |
 | --- | --- | --- |
-| a mistake that a script can find | a value in `sources/design.toml` or a check in fontgarden-tools | the commit message |
-| a mistake that repeats | a rule entry | "Seen in" in the entry |
+| a mistake that a script can find | a value in `context.md` or a check in fontgarden-tools | the commit message |
+| a mistake that repeats | a rule in `context.md` | "Seen in" in the rule |
 | a decision that a drafting method has to learn | a case in `sources/held-out-glyphs.toml` | a comment on the case |
-| a fault of one glyph only | one line in a glyph record under `documentation/design/` | the line |
+| a fault of one glyph only | a rule for that glyph in `context.md` | "Seen in" in the rule |
 
 The designer approves or rejects each change. One correction is not a rule. When the
 same mistake occurs again, add the glyph and commit to the existing entry.
@@ -69,10 +69,7 @@ A convex turn must not reverse its curvature. Read the comb before review.
 Seen in: a Regular (a1b2c3d4), s Regular (e5f6a7b8).
 ```
 
-When a script can test a rule, keep only the reason in the rule document.
-
-A rule document has at most 200 lines; the layout test enforces this. When a
-document is full, merge entries or move checkable values into scripts.
+When a script can test a rule, put its value in a `toml` block below the rule.
 
 ## Checks and their limits
 

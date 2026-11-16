@@ -28,17 +28,17 @@ as the Google Fonts packager runs it, builds the same fonts with fontmake.
 | --- | --- |
 | `make build` | Build the fonts into `fonts/`. |
 | `make diff` | Build main and the working tree and compare them with diffenator3. `BASE=<revision>` compares with another revision. |
-| `make qa` | Fontspector with the Font.Garden profile, offline, without the checks in `[qa.exclude]` of `sources/design.toml`. |
+| `make qa` | Fontspector with the Font.Garden profile, offline, without the checks in `[qa.exclude]` of `context.md`. |
 | `make qa-full` | All checks, with network checks. |
 | `make qa-package PACKAGE=<directory>` | All checks on an assembled google/fonts package. |
 | `make test` | Repository layout and documentation reference tests. |
 | `make status` | Rewrite `STATUS.md` from the mark colors. |
-| `make check-design GLYPHS="..."` | Compare glyphs with the targets in `sources/design.toml`. |
+| `make check-design GLYPHS="..."` | Compare glyphs with the targets in `context.md`. |
 | `make check-accents` | List the accented letters whose mark is not where the other accented letters predict, or not where the anchors of its parts are. |
 | `make accent-proofs` | Draw each accented letter beside the reference fonts and measure it against them. Sheets and `review.json` go to `out/accent-proofs/`. |
 | `make check-changes` | Check source changes since `main`: green glyphs unchanged, drafts purple. |
 | `make lint` | Structural and curve checks of the sources. |
-| `make reference-fonts` | Copy the families of `[reference_fonts.families]` in `sources/design.toml` into `reference-fonts/`. The folder is not in Git. |
+| `make reference-fonts` | Copy the families of `[reference_fonts.families]` in `context.md` into `reference-fonts/`. The folder is not in Git. |
 | `make runebender` | Open the sources in Runebender. It needs the `runebender` command: `cargo install --locked --git https://github.com/fontgarden/runebender runebender`. |
 | `make proof-web` | Compare the current build with `reference-fonts/` in a browser. |
 

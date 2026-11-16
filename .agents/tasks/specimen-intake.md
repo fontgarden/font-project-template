@@ -22,7 +22,7 @@ designer to grade.
 - No traced glyph has contours from scan dust: a contour smaller than the
   smallest dot of the design is removed.
 - `make lint` reports no structural fault. `make build` succeeds.
-- `make qa` reports no FAIL outside `[qa.exclude]` of `sources/design.toml`.
+- `make qa` reports no FAIL outside `[qa.exclude]` of `context.md`.
 - `make status` is run, and `make test` passes.
 
 ## Method
@@ -46,7 +46,7 @@ it lists the known faults and their causes.
 5. Run `img2ufo` with the labels and the metrics, with `--output` on the UFO
    in `sources/`, `--worklist out/specimen/completion.json` and `--no-qa`.
    It marks each trace purple, the mark of a draft that the designer has not
-   reviewed (`sources/design.toml`). A later run replaces only purple and
+   reviewed (`context.md`). A later run replaces only purple and
    red glyphs.
 6. Render the font in a line of text and compare it with the specimen. Find
    the glyphs that sit too high or too low, and the contours from dust.
