@@ -28,8 +28,9 @@ The source tools are in
 package with the command `fgtools`. `make setup` installs it, pinned to a
 commit in `requirements.in` and `requirements.txt`, with the pinned fontc and
 Fontspector binaries. `.venv/bin/fgtools --help` lists every command. Change
-a general tool there, not here. Add a `scripts` folder only for a tool that
-only this font needs. The design checks need the `runebender`
+a general tool there, not here. Add a `scripts` folder only for what
+only this font needs: a tool, or its own Fontspector checks in
+`scripts/fontspector_checks.py`, which `make test` runs with the profile. The design checks need the `runebender`
 command on `PATH`:
 
 ```sh
@@ -136,7 +137,7 @@ not purple.
 
 ## What belongs in the repository
 
-The repository holds sources, tests and the documents in the table above. It
+The repository holds sources and the documents in the table above. It
 does not hold records of work.
 
 - Do not add worklogs, handoffs, receipts, reports, plans, audits or dated
@@ -146,7 +147,7 @@ does not hold records of work.
 - Generated output goes to `output/`, which Git ignores. A tracked file has at
   most 500 KB, because a file stays in every clone of the history. A specimen
   scan can be larger.
-- `tests/test_repository_layout.py` fails when a tracked file has no place in
-  its LAYOUT or OPTIONAL list. `tests/test_documentation_references.py` fails when a
-  document names a file or a `make` target that does not exist.
+- `fgtools check-repository` (in `make test`) fails when a tracked file has
+  no place in the layout of Font.Garden projects, or when a document names a
+  file or a `make` target that does not exist.
 - Commit messages are plain, with no agent credit or trailers.

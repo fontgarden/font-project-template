@@ -49,7 +49,7 @@ a built font and a QA report. The designer then grades the drafts.
 | --- | --- |
 | `make setup` | Create `.venv` and install the requirements and the pinned tools. |
 | `make build` | Build the fonts into `fonts/` with fontc. |
-| `make test` | Build, then run the tests and the Font.Garden Fontspector profile. |
+| `make test` | Build, then check the repository and check the fonts with Fontspector. |
 | `make runebender` | Open the sources in Runebender. |
 | `make help` | All commands. |
 

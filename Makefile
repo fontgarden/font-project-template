@@ -24,8 +24,8 @@ customize: ## Rename the template once: make customize FAMILY="My Face" DESIGNER
 build: ## Build the fonts into fonts/ with fontc
 	$(FGTOOLS) build
 
-test: build ## Build, then run the tests and the Fontspector checks
-	$(PYTHON) -m unittest discover -s tests
+test: build ## Build, then check the repository and run the Fontspector checks
+	$(FGTOOLS) check-repository
 	$(FGTOOLS) qa
 
 qa: build ## Build, then run the Fontspector checks only
