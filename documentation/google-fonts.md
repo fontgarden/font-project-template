@@ -15,7 +15,7 @@ current official page.
 | Source of the design | State it here: an original design, or the specimen in `sources/specimen/` with its origin and date. |
 | License | SIL Open Font License 1.1 (`OFL.txt`) |
 | Build | `make build` (`fgtools build` with `sources/config.yaml`) |
-| QA | `make qa-full` (full Fontspector profile), `make qa-package PACKAGE=<directory>` |
+| QA | `fgtools qa --full` (full Fontspector profile), `fgtools qa --package <directory>` |
 | About text | `documentation/article/ARTICLE.en_us.html`, to be written |
 | AI use | Disclose it in the README and the article. The designer approves the glyphs. |
 
@@ -28,15 +28,62 @@ current official page.
 - README image: commit an image under `documentation/`.
 - Release tag: none yet.
 
+## Build
+
+`make build` runs `fgtools build`, which builds the fonts with
+`gftools builder` and fontc. A plain `gftools builder sources/config.yaml`,
+as the Google Fonts packager runs it, builds the same fonts with fontmake.
+`fgtools diff --fontmake` checks that fontc and fontmake give the same glyph
+and word images.
+
+## QA
+
+| Command | Use |
+| --- | --- |
+| `make qa` | Development profile, offline, without the checks in `[qa.exclude]` of `CONTEXT.md`. The CI gate. |
+| `fgtools qa --full` | Full profile with network checks and no exclusions. |
+| `fgtools qa --package <directory>` | Full profile on a package with `METADATA.pb`, `OFL.txt` and the article. |
+
+The profile is the Google Fonts profile plus the Font.Garden requirements: a
+1024-unit em, masters on the 2-unit grid, the vendor ID FTGD and the OFL 1.1.
+The reports are in `out/qa/<mode>/`. Read the JSON report, and count unique
+findings, not one finding for each font. A FAIL needs a fix or an exception
+that the designer approves. A WARN needs a decision by the designer. Outline warnings are
+listed for the designer by glyph name and are not corrected. Do not add exclusions,
+remove cmap entries or reduce the script scope to get a cleaner result.
+
+Coverage and table presence do not prove shaping. Look at mark attachment,
+joining, right-to-left and mixed text, spacing and the intermediate weights
+in a rendered proof.
+
+## Package
+
+1. Work in a directory under `out/`. Copy the reviewed TTFs and `OFL.txt`
+   into `ofl/<family>/` and run `gftools add-font` on it.
+2. Copy `documentation/article/ARTICLE.en_us.html` and its image to
+   `article/`.
+3. Check the generated metadata: names, designer, category, axes, subsets,
+   primary script, date and source.
+4. Run `fgtools qa --package <directory>`.
+
+Read `gftools packager --help` before you use it. Some of its modes commit,
+push or open a pull request. Use only a local preview unless the designer authorizes
+publication.
+
 ## Before the Add Font issue
 
 1. Every glyph is green in every master (`make status`).
-2. `make qa-full` reports no FAIL that applies to this repository.
+2. `fgtools qa --full` reports no FAIL, except
+   `googlefonts/repo/dirname_matches_nameid_1`, which applies to the
+   google/fonts package directory and not to this repository.
 3. The copyright holders have signed the Google CLA.
-4. Search the existing issues, then open the Add Font issue from its template.
+4. Search the existing issues, then draft the Add Font issue from its
+   template. Leave the copyright, CLA and image-license attestations
+   unchecked: only the designer can confirm them. The issue comes before a pull
+   request.
 
-For an agent, the full procedure is the task contract
-[`.agents/tasks/google-fonts-release.md`](../.agents/tasks/google-fonts-release.md).
+Do not post, push, tag or publish without the authorization of the designer. Report what
+is local, drafted, submitted and published as separate states.
 
 ## Official sources
 

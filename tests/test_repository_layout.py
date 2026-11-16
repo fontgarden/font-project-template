@@ -23,15 +23,15 @@ LAYOUT = [
     'OFL.txt', 'README.md', 'STATUS.md', 'requirements.in', 'requirements.txt',
     '.github/workflows/*.yaml',
     # Agent files: skills, task contracts, and the OMP rules link to AGENTS.md.
-    '.agents/README.md', '.agents/skills/*/SKILL.md',
+    '.agents/skills/*/SKILL.md',
     '.agents/tasks/*.md', '.omp/RULES.md',
     # Sources.
-    'sources/config.yaml', 'sources/held-out-glyphs.toml', 'context.md',
+    'sources/config.yaml', 'sources/held-out-glyphs.toml', 'CONTEXT.md',
     'sources/*.ufo/**',
     # Tests of the repository itself. The tools are in fontgarden-tools.
     'tests/test_*.py',
     # Documentation.
-    'documentation/*.md', 'documentation/design/**/*.md',
+    'documentation/*.md',
 ]
 
 # Allowed paths that a project does not need. No file has to match them.
@@ -43,7 +43,7 @@ OPTIONAL = [
     # Text samples of this project for `fgtools proof-web`.
     'sources/proof-samples.toml',
     # Tools that only this font needs.
-    'scripts/README.md', 'scripts/*.py', 'scripts/*.sh',
+    'scripts/*.py',
     # The Google Fonts article and the DesignBot scripts of the images.
     'documentation/article/**', 'documentation/readme-images/*.rs',
 ]

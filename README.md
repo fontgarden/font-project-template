@@ -49,15 +49,9 @@ a built font and a QA report. The designer then grades the drafts.
 | --- | --- |
 | `make setup` | Create `.venv` and install the requirements and the pinned tools. |
 | `make build` | Build the fonts into `fonts/` with fontc. |
-| `make qa` | Check the fonts with the Font.Garden Fontspector profile. |
-| `make diff` | Compare builds of `main` and the working tree with diffenator3. |
-| `make reference-fonts` | Get the reference fonts that `context.md` lists into `reference-fonts/`, which Git ignores. |
-| `make proof-web` | Build, then compare the font with the fonts in `reference-fonts/` in a browser. |
-| `make status` | Rewrite [STATUS.md](STATUS.md) from the mark colors. |
-| `make test` | Check the repository layout and the document references. |
-
-`make help` lists all commands. [documentation/qa.md](documentation/qa.md)
-describes the build and the checks.
+| `make test` | Build, then run the tests and the Font.Garden Fontspector profile. |
+| `make runebender` | Open the sources in Runebender. |
+| `make help` | All commands. |
 
 ## Method
 
@@ -65,21 +59,16 @@ The em is 1024 units and every point is on a 2-unit grid. Each glyph has a
 mark color that gives its state: purple is a draft that the designer has not
 reviewed, red, orange and yellow are grades, and green is approved. The
 release target is every glyph green.
-[documentation/design/learning.md](documentation/design/learning.md)
-describes the loop of drafts, checks, grades and corrections.
 
-## Tools
+- [CONTEXT.md](CONTEXT.md) holds the design rules of the font, with the
+  values that the tools check.
+- [AGENTS.md](AGENTS.md) describes the loop of drafts, checks, grades and
+  corrections, and the rules for work on the sources.
 
 The tools are shared by all Font.Garden fonts and are in
 [fontgarden-tools](https://github.com/fontgarden/fontgarden-tools), with the
-command `fgtools`: status, design checks, change checks, the build, QA, build
-comparisons, the web proof and the drafting evaluation. `make setup` installs
-them, pinned to a commit in `requirements.txt`, with the pinned fontc and
-Fontspector binaries.
-
-AI tools help with code, documentation and draft glyphs. The designer draws,
-reviews and approves the glyphs. The rules for agents are in
-[AGENTS.md](AGENTS.md).
+command `fgtools`. AI tools help with code, documentation and draft glyphs.
+The designer draws, reviews and approves the glyphs.
 
 ## License
 

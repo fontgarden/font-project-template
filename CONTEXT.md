@@ -42,7 +42,7 @@ stroke.
 
 ## Weights
 
-R3. `make draft-weights` drafts more weights from two masters, when the
+R3. `fgtools draft-weights --build` drafts more weights from two masters, when the
 project has a designspace with two masters. `vertical_stem` and
 `horizontal_stroke` give the stroke of H in each master and the target of
 the weight. The drafts go to `out/weights/`. To use it, remove the comment
@@ -69,7 +69,7 @@ glyph that has the color.
 ```toml
 [colors.green]
 rgba = [[0, 1, 0, 1], [0.09, 0.72, 0.44, 1]]
-policy = """Locked in as close to final. Eli approves contour glyphs. A composite is green when its \
+policy = """Locked in as close to final. The designer approves contour glyphs. A composite is green when its \
 parts are green and `fgtools check-design --ready` lists it."""
 
 [colors.yellow]
@@ -78,15 +78,15 @@ policy = "Close. Edit without replacing the drawing. Not a reference."
 
 [colors.orange]
 rgba = [[1, 0.5, 0, 1], [1, 0.6, 0.06, 1], [0.97, 0.58, 0, 1]]
-policy = "Better, not good enough. Edit and keep useful construction. Replace only when Eli says so."
+policy = "Better, not good enough. Edit and keep useful construction. Replace only when the designer says so."
 
 [colors.red]
 rgba = [[1, 0, 0, 1], [1, 0.29, 0.24, 1], [1, 0.3, 0.3, 1]]
-policy = "Broken. Can be replaced when Eli names the glyph. Not a reference."
+policy = "Broken. Can be replaced when the designer names the glyph. Not a reference."
 
 [colors.purple]
 rgba = [[0.54, 0.44, 0.88, 1], [0.5, 0, 1, 1]]
-policy = "AI drawing that Eli has not reviewed. Not a reference."
+policy = "AI drawing that the designer has not reviewed. Not a reference."
 
 [colors.blue]
 rgba = [[0.27, 0.44, 1, 1]]
