@@ -1,5 +1,11 @@
-# The brand of Font Garden Template in its marketing media: the colors and the texts.
-# `make media` renders the formats of formats.toml into output/media/.
+# The brand of Font Garden Template in its marketing media. `make media` renders
+# the default formats of fgtools into output/media/: posters, a release picture,
+# a link card, glyphs on the grid, the character set and an animation of the
+# weight axis. This file is the only one that a new font needs.
+#
+# `fgtools media --list` lists the formats and the canvases. To give a format a
+# caption, other canvases or other words, add formats.toml to this folder. To
+# change a layout, run `fgtools media --copy <format>` and edit the copy.
 
 [colors]
 ground = "#282828"
@@ -11,4 +17,9 @@ tagline = "One sentence about the font"
 designer = "Designer Name"
 url = ""
 # The words of the large pictures. Choose words that show the best letters.
+# A word with a letter that the font does not have yet is left out, and a
+# font without one of these words shows the letters that it has.
 words = ["Font", "Garden", "Template"]
+# The glyphs of the glyph pictures, and one line for each script of the font.
+glyphs = ["a", "G", "R", "g", "&", "?"]
+lines = ["Font Garden Template"]
