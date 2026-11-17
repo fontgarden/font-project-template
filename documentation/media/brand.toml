@@ -39,3 +39,25 @@ alt = ""
 kind = "image"
 canvases = ["card"]
 alt = ""
+
+[format.glyph-detail]
+kind = "carousel"
+canvases = ["portrait", "square"]
+# One glyph for each page. Choose the glyphs that show the design best.
+words = ["a", "G", "R"]
+caption = ""
+alt = ""
+
+[format.scripts]
+kind = "carousel"
+canvases = ["portrait", "landscape"]
+# One line for each page, for example one line in each script of the font.
+words = ["Font Garden"]
+caption = ""
+alt = ""
+
+[format.release]
+kind = "image"
+canvases = ["portrait", "square", "landscape", "vertical"]
+caption = ""
+alt = ""
