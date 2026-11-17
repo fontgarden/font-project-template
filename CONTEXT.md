@@ -1,20 +1,52 @@
-# Font Garden Template design rules
+# Font Garden Template
 
-The rules of this font for every drawing, draft and review, and the values
-that the tools check. This is the one design file of the project. Runebender
-gives it to its agents, and the task contracts in `.agents/` require it.
+Font Garden Template is the start of a new typeface. Replace this paragraph
+with the description of the font: what it is, who draws it, the scripts and
+the license.
 
-A `toml` code block holds the values of the rule above it. `fgtools` reads
-only these blocks, as one TOML document. Font metrics are in the
-`fontinfo.plist` files; they are not repeated here.
+This file is the description of the design. It has three readers:
 
-How to use it:
+- A person reads it to understand the typeface: the idea, the construction
+  and the decisions. Text about the design in the README, a specimen or an
+  article comes from this file.
+- An agent reads all of it before it draws or reviews a glyph. Runebender
+  gives it to its agents.
+- `fgtools` reads the values in the `toml` code blocks. A block holds the
+  values of the rule above it, and the tools read all blocks as one TOML
+  document.
 
-- Before you draw or change a glyph, read every rule here.
+A design value or a design rule is stated here and in no other file. Font
+metrics are in the `fontinfo.plist` files. They are not repeated here.
+
+## Contents
+
+`make test` fails when this table and the chapters differ.
+
+| Chapter | Content |
+| --- | --- |
+| [The idea](#the-idea) | Why the font exists, and what came before it. |
+| [How to use the rules](#how-to-use-the-rules) | How an agent draws and reviews with the numbered rules. |
+| [Grid](#grid) | The em and the grids of the points. |
+| [Strokes](#strokes) | The stroke weights of each master. |
+| [Weights](#weights) | The weights that are drafted from the masters. |
+| [Accented letters](#accented-letters) | The positions of marks on base letters. |
+| [Project settings](#project-settings) | Settings of the tools: mark colors, reference fonts and known QA debt. |
+
+## The idea
+
+Write the idea of the design here, in prose: the purpose of the font, the
+precedents, and the principles that every glyph follows. An agent that
+writes a specimen or a README takes its text from this chapter.
+
+## How to use the rules
+
+The rules have numbers (R1, R2 and so on). A number never changes.
+
+- Before you draw or change a glyph, read every rule.
 - When you review a glyph, check it against every rule that applies, by
   number. Then look at the whole glyph for faults that no rule names.
 - When the designer corrects a glyph and the reason is a principle, add a
-  rule here with "Seen in" and the commit, or add the commit to the rule that
+  rule with "Seen in" and the commit, or add the commit to the rule that
   covers it.
 
 ## Grid

@@ -10,7 +10,7 @@ proof, measure and report.
 | File | Content |
 | --- | --- |
 | `AGENTS.md` | How to work. This file. |
-| [CONTEXT.md](CONTEXT.md) | The design: numbered rules, with the values that the tools check in `toml` blocks. Runebender gives it to its agents. |
+| [CONTEXT.md](CONTEXT.md) | The design: the description of the font, the idea and the numbered rules, with the values that the tools check in `toml` blocks. Runebender gives it to its agents. |
 | [STATUS.md](STATUS.md) | Progress, written by `make status` from the mark colors. |
 | `Makefile` | The daily commands. `make help` lists them. |
 | `sources/` | One UFO for each master, a designspace when there is more than one master, `sources/config.yaml` (the gftools builder recipe) and `sources/held-out-glyphs.toml` (cases of the drafting evaluation). A traced font has its specimen image in a `specimen` folder here. |
