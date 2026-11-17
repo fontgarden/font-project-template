@@ -20,5 +20,7 @@ url = ""
 # word is used when it fills a measure. A word with a letter that the font
 # does not have yet is left out.
 words = ["Font", "Garden", "Template"]
+# Characters that no chosen word has, for example a glyph that is not finished.
+avoid = []
 # The glyphs of the glyph pictures.
 glyphs = ["a", "G", "R", "g", "&", "?"]
