@@ -50,6 +50,9 @@ proof: build ## Build, then write the print proof to output/proof/proof.pdf
 	mkdir -p output/proof
 	designbot proof fonts/variable/*.ttf --output output/proof/proof.pdf
 
+media: build ## Build, then render the marketing media into output/media/
+	$(FGTOOLS) media
+
 proof-web: build ## Build, then compare with reference-fonts/ in a browser
 	$(FGTOOLS) proof-web --current
 
@@ -62,4 +65,4 @@ runebender: ## Open the sources in Runebender
 clean: ## Remove fonts/ and output/
 	rm -rf fonts output
 
-.PHONY: help setup venv customize build test qa status queue check-design check-changes diff proof proof-web reference-fonts runebender clean
+.PHONY: help setup venv customize build test qa status queue check-design check-changes diff proof media proof-web reference-fonts runebender clean
