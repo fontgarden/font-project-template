@@ -52,6 +52,7 @@ a built font and a QA report. The designer then grades the drafts.
 | `make test` | Build, then check the repository and check the fonts with Fontspector. |
 | `make proof` | Build, then write the print proof to `output/proof/proof.pdf`. |
 | `make media` | Build, then render the marketing media into `output/media/`. |
+| `make specimen` | Build, then write the print specimen to `output/specimen/`. |
 | `make runebender` | Open the sources in Runebender. |
 | `make help` | All commands. |
 

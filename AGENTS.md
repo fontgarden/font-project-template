@@ -15,7 +15,7 @@ proof, measure and report.
 | `Makefile` | The daily commands. `make help` lists them. |
 | `sources/` | One UFO for each master, a designspace when there is more than one master, `sources/config.yaml` (the gftools builder recipe) and `sources/held-out-glyphs.toml` (cases of the drafting evaluation). A traced font has its specimen image in a `specimen` folder here. |
 | [documentation/google-fonts.md](documentation/google-fonts.md) | The release: facts, QA, package and the Add Font issue. |
-| `documentation/media/` | The marketing media of this font. `brand.toml` has the colors and the texts. `formats.toml` (optional) gives a format a caption, an alternative text, other words or other canvases. The layouts are the default formats of fgtools; `fgtools media --copy <format>` copies one into `images/`, `carousels/` or `videos/` here, to change it for this font. `make media` renders into `output/media/`. |
+| `documentation/media/` | The specimens and the marketing media of this font. `brand.toml` has the colors and the texts. `formats.toml` (optional) gives a format a caption, an alternative text or other canvases. The layouts are the default formats of fgtools, on the lattice of the typeface; `fgtools media --copy <format>` copies one into `images/`, `carousels/` or `videos/` here, to change it for this font. `make media` renders into `output/media/`, and `make specimen` writes the print specimen to `output/specimen/`. |
 | `.agents/tasks/` | Contracts for unattended runs: specimen intake, glyph drafts and accented letters. |
 
 `CONTEXT.md` is the one design file. Do not state a design value or a design
