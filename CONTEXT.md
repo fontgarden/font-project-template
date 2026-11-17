@@ -20,17 +20,18 @@ metrics are in the `fontinfo.plist` files. They are not repeated here.
 
 ## Contents
 
-`make test` fails when this table and the chapters differ.
+`make test` fails when this list and the chapters differ.
 
-| Chapter | Content |
-| --- | --- |
-| [The idea](#the-idea) | Why the font exists, and what came before it. |
-| [How to use the rules](#how-to-use-the-rules) | How an agent draws and reviews with the numbered rules. |
-| [Grid](#grid) | The em and the grids of the points. |
-| [Strokes](#strokes) | The stroke weights of each master. |
-| [Weights](#weights) | The weights that are drafted from the masters. |
-| [Accented letters](#accented-letters) | The positions of marks on base letters. |
-| [Project settings](#project-settings) | Settings of the tools: mark colors, reference fonts and known QA debt. |
+- [The idea](#the-idea): Why the font exists, and what came before it.
+- [How to use the rules](#how-to-use-the-rules): How an agent draws and
+  reviews with the numbered rules.
+- [Grid](#grid): The em and the grids of the points.
+- [Strokes](#strokes): The stroke weights of each master.
+- [Weights](#weights): The weights that are drafted from the masters.
+- [Accented letters](#accented-letters): The positions of marks on base
+  letters.
+- [Project settings](#project-settings): Settings of the tools: mark colors,
+  reference fonts and known QA debt.
 
 ## The idea
 
