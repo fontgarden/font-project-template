@@ -56,6 +56,6 @@ runebender: ## Open the sources in Runebender
 	runebender "$(firstword $(wildcard sources/*.designspace) $(wildcard sources/*.ufo))" &
 
 clean: ## Remove fonts/ and output/
-	rm -rf fonts output build
+	rm -rf fonts output
 
 .PHONY: help setup venv customize build test qa status queue check-design check-changes diff proof-web reference-fonts runebender clean
