@@ -1,8 +1,5 @@
-# The marketing media of Font Garden Template. `make media` renders each
-# format on each of its canvases into output/media/. A format is the DesignBot
-# script with the same name in this folder. Change the colors, the texts and
-# the scripts for the style of the font. `fgtools media --list` lists the
-# canvases, and `fgtools media --safe-areas` draws the safe area of each one.
+# The brand of Font Garden Template in its marketing media: the colors and the texts.
+# `make media` renders the formats of formats.toml into output/media/.
 
 [colors]
 ground = "#282828"
@@ -15,49 +12,3 @@ designer = "Designer Name"
 url = ""
 # The words of the large pictures. Choose words that show the best letters.
 words = ["Font", "Garden", "Template"]
-
-[format.specimen-poster]
-kind = "image"
-canvases = ["portrait", "square", "landscape"]
-caption = ""
-alt = ""
-
-[format.weight-axis]
-needs_weight_axis = true
-kind = "video"
-canvases = ["vertical", "portrait", "landscape"]
-caption = ""
-alt = ""
-
-[format.character-set]
-kind = "carousel"
-canvases = ["portrait"]
-caption = ""
-alt = ""
-
-[format.link-card]
-kind = "image"
-canvases = ["card"]
-alt = ""
-
-[format.glyph-detail]
-kind = "carousel"
-canvases = ["portrait", "square"]
-# One glyph for each page. Choose the glyphs that show the design best.
-words = ["a", "G", "R"]
-caption = ""
-alt = ""
-
-[format.scripts]
-kind = "carousel"
-canvases = ["portrait", "landscape"]
-# One line for each page, for example one line in each script of the font.
-words = ["Font Garden"]
-caption = ""
-alt = ""
-
-[format.release]
-kind = "image"
-canvases = ["portrait", "square", "landscape", "vertical"]
-caption = ""
-alt = ""
