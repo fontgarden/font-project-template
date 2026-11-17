@@ -50,8 +50,14 @@ a built font and a QA report. The designer then grades the drafts.
 | `make setup` | Create `.venv` and install the requirements and the pinned tools. |
 | `make build` | Build the fonts into `fonts/` with fontc. |
 | `make test` | Build, then check the repository and check the fonts with Fontspector. |
+| `make proof` | Build, then write the print proof to `output/proof/proof.pdf`. |
+| `make media` | Build, then render the marketing media into `output/media/`. |
 | `make runebender` | Open the sources in Runebender. |
 | `make help` | All commands. |
+
+The CI renders the proof and the media on each push to `main` and publishes
+them on GitHub Pages. Turn Pages on once: Settings, Pages, Source "GitHub
+Actions". No rendered file is tracked in Git.
 
 ## Method
 
