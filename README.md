@@ -50,10 +50,12 @@ a built font and a QA report. The designer then grades the drafts.
 | `make setup` | Create `.venv` and install the requirements and the pinned tools. |
 | `make build` | Build the fonts into `fonts/` with fontc. |
 | `make test` | Build, then check the repository and check the fonts with Fontspector. |
-| `make formats` | List the formats, the canvases and the pages of the proof. `make proof PAGE="spacing kerning"`, `make specimen PAGE=words` and `make media FORMAT=videos` or `make media FORMAT=weight-axis CANVAS=landscape` make a part only. |
+| `make formats` | List the formats, the canvases and the pages of the proof. `make proof PAGE="spacing kerning"`, `make specimen PAGE=words` and `make media FORMAT=videos` or `make media FORMAT=weight-axis CANVAS=landscape` make a part only. `make copy-format FORMAT=words` copies a default format into the project, to change it for this font. |
 | `make proof` | Build, then write the print proof to `output/proof/proof.pdf`. |
 | `make media` | Build, then render the marketing media into `output/media/`. |
 | `make specimen` | Build, then write the print specimen to `output/specimen/`. |
+| `make site` | Build, then make the proof, the specimen and the media, and collect them into `output/site/`. CI publishes this folder. |
+| `make render GLYPHS="a n"` | Draw glyphs large for review, with the change since `main`. |
 | `make runebender` | Open the sources in Runebender. |
 | `make help` | All commands. |
 
