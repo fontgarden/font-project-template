@@ -15,7 +15,7 @@ current official page.
 | Source of the design | State it here: an original design, or the specimen in `sources/specimen/` with its origin and date. |
 | License | SIL Open Font License 1.1 (`OFL.txt`) |
 | Build | `make build` (`fgtools build` with `sources/config.yaml`) |
-| QA | `fgtools qa --full` (full Fontspector profile), `fgtools qa --package <directory>` |
+| QA | `make test` (every check except `[qa.exclude]` of `CONTEXT.md`), `fgtools qa --package <directory>` |
 | About text | `documentation/article/ARTICLE.en_us.html`, to be written |
 | AI use | Disclose it in the README and the article. The designer approves the glyphs. |
 
@@ -40,13 +40,14 @@ and word images.
 
 | Command | Use |
 | --- | --- |
-| `make qa` | Development profile, offline, without the checks in `[qa.exclude]` of `CONTEXT.md`. The CI gate. |
-| `fgtools qa --full` | Full profile with network checks and no exclusions. |
-| `fgtools qa --package <directory>` | Full profile on a package with `METADATA.pb`, `OFL.txt` and the article. |
+| `make test` | Every check: the repository, the Google Fonts checks, the Font.Garden checks and the checks of this font, without the known faults in `[qa.exclude]` of `CONTEXT.md`. The CI gate. |
+| `make test-google-fonts` | The Google Fonts checks only. |
+| `make test-fontgarden` | The Font.Garden checks and the checks of this font only. |
+| `fgtools qa --package <directory>` | Every check, with no exclusions, on a package with `METADATA.pb`, `OFL.txt` and the article. |
 
 The profile is the Google Fonts profile plus the Font.Garden requirements: a
 1024-unit em, masters on the 2-unit grid, the vendor ID FTGD and the OFL 1.1.
-The reports are in `output/qa/<mode>/`. Read the JSON report, and count unique
+The reports are in `output/qa/<checks>/`: `all`, `google-fonts`, `fontgarden` or `package`. Read the JSON report, and count unique
 findings, not one finding for each font. A FAIL needs a fix or an exception
 that the designer approves. A WARN needs a decision by the designer. Outline warnings are
 listed for the designer by glyph name and are not corrected. Do not add exclusions,
@@ -73,7 +74,7 @@ publication.
 ## Before the Add Font issue
 
 1. Every glyph is green in every master (`make status`).
-2. `fgtools qa --full` reports no FAIL, except
+2. `make test` passes, and `[qa.exclude]` of `CONTEXT.md` has only
    `googlefonts/repo/dirname_matches_nameid_1`, which applies to the
    google/fonts package directory and not to this repository.
 3. The copyright holders have signed the Google CLA.

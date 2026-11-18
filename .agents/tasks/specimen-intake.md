@@ -22,7 +22,7 @@ designer to grade.
 - No traced glyph has contours from scan dust: a contour smaller than the
   smallest dot of the design is removed.
 - `.venv/bin/fgtools lint-glifs` reports no structural fault. `make build` succeeds.
-- `make qa` reports no FAIL outside `[qa.exclude]` of `CONTEXT.md`.
+- `make test` passes.
 - `make status` is run, and `make test` passes.
 
 ## Method

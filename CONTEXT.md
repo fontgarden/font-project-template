@@ -176,9 +176,10 @@ sourcesans3 = "A sans for text from a professional foundry, with even spacing."
 
 ### Known QA debt
 
-Known development debt, not release exceptions. `fgtools qa` leaves these
-checks out, and `fgtools qa --full` runs them. Remove a check when the font
-passes it. Do not add a check to hide a new failure.
+Known faults of the fonts, not release exceptions. `make test` leaves these
+checks out, so that a FAIL there is a new fault. Remove a check when the font
+passes it. The fonts are ready for release when this list is empty. Do not
+add a check to hide a new fault.
 
 ```toml
 [qa.exclude]
